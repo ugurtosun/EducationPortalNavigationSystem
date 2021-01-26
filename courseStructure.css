@@ -1,0 +1,95 @@
+.myDiv {
+    width: auto;
+    height: 80px;
+    border: 5px outset red;
+    background-color: lightblue;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+    width: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 600px;
+}
+
+.iFrame {
+    width: 100%;
+    height: 50%;
+    float: right;
+}
+
+.toc {
+    width: 20%;
+    height: 50%;
+    display: none;
+    float: left;
+    line-height: 1.6;
+    padding-top: 20px;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.testTable {
+    width: 20%;
+    height: 50%;
+    display: none;
+    float: left;
+    line-height: 1.6;
+    padding-top: 20px;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.button {
+    background-color: blueviolet;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button2 {
+    background-color: blueviolet;
+    text-align: left;
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 11px;
+}
+
+.li_s:hover {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.clickableHover:hover {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.target{
+    width: 30px;
+    height: 30px;
+    background-color: #aaa;
+    border-radius: 50%;
+}
+
+.bubbles{
+    display: flex;
+}
+
+.bubbleIndicator{
+    background-color: blueviolet;
+}
+
+.bubbleCurrentIndicator{
+    background-color: darkred;
+}
+

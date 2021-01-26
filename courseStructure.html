@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Presentation</title>
+    <script src="./courseStructure.js"></script>
+    <script src="./controller.js"></script>
+    <script src="./test.js"></script>
+    <link rel="stylesheet" href="courseStructure.css">
+
+</head>
+<body>
+
+<div class="myDiv">
+    <h1>Welcome Online Education System</h1>
+</div>
+
+<div class="container">
+    <div class="toc" id="toc">
+        <ul id="tableOfContent"></ul>
+    </div>
+    <div class="iFrame">
+        <iframe src="" id="currentPage" title="description" width="100%" height="600px"></iframe>
+    </div>
+    <div class="testTable" id="testTable">
+        <h3>Test Suite</h3>
+        <h4>Navigation Expected Page Tests</h4>
+        <ul>
+            <li id="expectedPageTestCase1" class="clickableHover" onclick="expectedPageTestCase1()">expectedPageTestCase1</li>
+            <li id="expectedPageTestCase2" class="clickableHover" onclick="expectedPageTestCase2()">expectedPageTestCase2</li>
+            <li id="expectedPageTestCase3" class="clickableHover" onclick="expectedPageTestCase3()">expectedPageTestCase3</li>
+            <li id="expectedPageTestCase4" class="clickableHover" onclick="expectedPageTestCase4()">expectedPageTestCase4</li>
+        </ul>
+        <h4>Visibility Tests</h4>
+        <ul>
+            <li id="buttonsVisibilityTestCase" class="clickableHover" onclick="buttonsVisibilityTestCase()">buttonsVisibilityTestCase</li>
+            <li id="bubblesVisibilityTestCase" class="clickableHover" onclick="bubblesVisibilityTestCase()">bubblesVisibilityTestCase</li>
+            <li id="tableOfContentTestCase" class="clickableHover" onclick="buttonsVisibilityTestCase()">tableOfContentTestCase</li>
+        </ul>
+        <div style="height: 50px">
+            <textarea readonly style="resize:none; height: 42px; width: 345px" id="textResult">
+            </textarea>
+        </div>
+    </div>
+
+</div>
+
+<div class="center" id="controlPanel">
+    <button type="button" id="tocButton" class="button" onclick="tableOfContentEvent()">ToC</button>
+    <button type="button" id="backButton" class="button" onclick="backEvent()">Back</button>
+    <button type="button" id="previousButton" class="button" onclick="previousEvent()">Previous</button>
+    <button type="button" id="nextButton" class="button" onclick="nextEvent()">Next</button>
+    <button type="button" id="forwardButton" class="button" onclick="forwardEvent()">Forward</button>
+</div>
+
+<div align="right">
+    <text id = "pageIndicator">&emsp;&emsp;&emsp;Initial Page</text>
+</div>
+
+<button type="button" id="visualizationButton" class="button2" onclick="showHideVisualization()">Show/Hide Visualization</button>
+<button type="button" id="testTableButton" class="button2" onclick="showHideTestTable()">Show/Hide Tests</button>
+<br><br>
+
+<script>
+
+    const conceptsList = course();
+    var pageArray = [];
+    var array = [];
+    var flagTOC = false;
+    var flagVisual = false;
+    var flagTest = false;
+    pageArray = readConcepts(conceptsList.arrConcept, array);
+
+    var currentPageNumber = 0;
+    document.getElementById("currentPage").src = "courseA/" + pageArray[currentPageNumber];
+
+    var myStack = new Stack();
+    var indexHolder = 0;
+
+    createList(document.querySelector("ul"), [createObjectTOC()], indexHolder);
+    visualizeStack();
+
+</script>
+
+</body>
+</html>
